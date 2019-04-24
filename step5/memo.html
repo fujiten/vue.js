@@ -1,0 +1,44 @@
+<div id="app">
+  <p>
+    {{ reversedMessage }}
+  </p>
+  <h2>算出プロパティとメソッドの違い</h2>
+  <ul>
+    <li>computedは()不要、methodsは必要</li>
+    <li>computedはgetter,setter定義可能、methodsはgetterのみ</li>
+    <li>computedはキャッシュされる。methodsはされない</li>
+  </ul>
+  算出プロパティのsetter,getterの記述法
+
+  computed: {
+    taxIncludedPrice: {
+      get: function(){
+        return parseInt(this.basePrice * 1.08)
+      },
+      set: function(taxIncludedPrice){
+        this.basePrice = Math.ceil(taxIncludedPrice / 1.08)
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+  methods: {
+    returnRandomNumber: function(){
+      return Math.random()
+    }
+
+  },
+  computed: {
+    returnRandomNumber: function(){
+      return Math.random()
+    }
+  }
+</div>
+
